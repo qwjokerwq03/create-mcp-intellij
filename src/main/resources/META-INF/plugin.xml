@@ -1,0 +1,27 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.qwjokerwq03.createmcp</id>
+    <name>Create MCP</name>
+    <vendor email="support@qwjokerwq03.com" url="https://github.com/qwjokerwq03">qwjokerwq03</vendor>
+
+    <description><![CDATA[
+    Auto-generates custom Python Model Context Protocol (MCP) servers from any codebase.<br>
+    Simply right-click a folder in your Project Explorer, select <b>Create MCP Server</b>,
+    and it will automatically analyze your controllers/routers (Express, FastAPI, Flask, Django, Spring Boot)
+    and synthesize a fully functional local MCP server!
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <!-- Register Context Menu Action -->
+        <action id="com.qwjokerwq03.createmcp.GenerateMcpAction"
+                class="com.qwjokerwq03.createmcp.GenerateMcpAction"
+                text="Create MCP Server"
+                description="Generates a customized Python MCP server from the selected folder">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
